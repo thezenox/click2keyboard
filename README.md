@@ -50,8 +50,18 @@ One file, two dependencies (`bleak` for BLE, `keyboard` for the key presses):
    field 1 is the `+` button and field 2 is the `-` button (`0` = pressed).
 3. On each press edge, send the mapped key. Reconnects automatically on drop.
 
-This is a stripped-down rewrite of
-[jat255/zwift_click_handling](https://github.com/jat255/zwift_click_handling):
-the unused (and never-working) encryption path, the protobuf/crypto/dotenv/rich
-dependencies and the Poetry setup are gone. BLE protocol details originally from
-[ajchellew/zwiftplay](https://github.com/ajchellew/zwiftplay). See `LICENSE`.
+## Credits & related work
+
+- The Zwift Click BLE protocol was reverse-engineered by
+  [ajchellew/zwiftplay](https://github.com/ajchellew/zwiftplay) — the UUIDs, the
+  `RideOn` handshake and the button message format all come from there.
+- This tool is a simplified rewrite of
+  [jat255/zwift_click_handling](https://github.com/jat255/zwift_click_handling)
+  (MIT): same idea, but a single file with only `bleak` + `keyboard`, dropping
+  the unused (never-working) encryption path and the
+  protobuf/crypto/dotenv/rich/Poetry dependencies.
+- Related: [Barley194/BTKeyboardEmulationWithZwiftClickHandling](https://github.com/Barley194/BTKeyboardEmulationWithZwiftClickHandling)
+  takes a different route — it emulates the Click as a virtual Bluetooth keyboard.
+
+No source code was copied verbatim; what is shared is the device protocol itself
+(which the projects above take from ajchellew's work). Licensed MIT — see `LICENSE`.
