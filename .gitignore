@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+buildenv/
+
+# PyInstaller build artifacts (the finished exe in dist/ is kept on purpose)
+build/
+*.spec
+
+# misc
+.env
+*.log
